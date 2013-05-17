@@ -1,16 +1,17 @@
 {
-	"name": "reef",
-	"version": "0.0.1",
-	"dependencies": {
-		"express": "~3.2.4",
-		"handlebars": "~1.0.11",
-		"underscore": "~1.4.4",
-		"requirejs": "~2.1.6"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.4.3",
-		"grunt-contrib-watch": "~0.4.3",
-		"grunt-contrib-copy": "~0.4.1"
-	}
+  "name": "reef",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~3.2.4",
+    "handlebars": "~1.0.11",
+    "underscore": "~1.4.4",
+    "requirejs": "~2.1.6"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
 }

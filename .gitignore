@@ -1,4 +1,7 @@
 node_modules
 components
+src
+test
+dist
 .c9revisions
 .DS_Store
