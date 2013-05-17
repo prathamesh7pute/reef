@@ -19,6 +19,12 @@ module.exports = function (grunt) {
 					'src/public/js/lib/backbone.js': 'components/backbone/backbone.js',
 					'src/public/js/lib/require.js': 'components/requirejs/require.js'
 				}
+			},
+			csslibs: {
+				files: {
+					'src/public/css/bootstrap.css': 'components/bootstrap/docs/assets/css/bootstrap.css',
+					'src/public/css/bootstrap-responsive.css': 'components/bootstrap/docs/assets/css/bootstrap-responsive.css'
+				}
 			}
 		},
 
