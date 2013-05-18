@@ -1,7 +1,7 @@
 node_modules
 components
+dist
 src
 test
-dist
 .c9revisions
 .DS_Store
