@@ -26,6 +26,11 @@ module.exports = function (grunt) {
 					'src/public/css/bootstrap.css': 'components/bootstrap/docs/assets/css/bootstrap.css',
 					'src/public/css/bootstrap-responsive.css': 'components/bootstrap/docs/assets/css/bootstrap-responsive.css'
 				}
+			},
+			server: {
+				files: {
+					'src/server.js': 'assets/server/server.js'
+				}
 			}
 		},
 
