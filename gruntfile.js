@@ -25,19 +25,44 @@ module.exports = function (grunt) {
 				files: {
 					'src/public/css/bootstrap.css': 'components/bootstrap/docs/assets/css/bootstrap.css',
 					'src/public/css/bootstrap-responsive.css': 'components/bootstrap/docs/assets/css/bootstrap-responsive.css'
+					'src/public/img/glyphicons-halflings-white.png': 'components/bootstrap/img/glyphicons-halflings-white.png'
+					'src/public/img/glyphicons-halflings.png': 'components/bootstrap/img/glyphicons-halflings.png'
 				}
 			},
 			server: {
 				files: {
 					'src/server.js': 'assets/server/server.js'
 				}
+			},
+			web: {
+				files: [{
+					expand: true,
+					cwd: 'assets/web/',
+					src: ['**'],
+					dest: 'src/public/'
+				}]
+
 			}
 		},
 
 		requirejs: {
 			compile: {
 				options: {
+					baseUrl: "path/to/base",
+					mainConfigFile: "path/to/config.js",
+					out: "path/to/optimized.js"
+				}
+			}
+		},
 
+		handlebars: {
+			compile: {
+				options: {
+					namespace: "JST"
+				},
+				files: {
+					"path/to/result.js": "path/to/source.hbs",
+					"path/to/another.js": ["path/to/sources/*.hbs", "path/to/more/*.hbs"]
 				}
 			}
 		},
@@ -49,29 +74,14 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('build', ['copy']);
 	grunt.registerTask('optimize', ['requirejs']);
 	grunt.registerTask('default', ['jshint']);
-
-	grunt.registerMultiTask('requirejs', 'Build a RequireJS project.', function () {
-
-		var done = this.async();
-		var options = this.options({
-			logLevel: 0,
-			done: function (done, response) {
-				done();
-			}
-		});
-		grunt.verbose.writeflags(options, 'Options');
-
-		console.log("yahoo");
-
-		//requirejs.optimize(options, options.done.bind(null, done));
-		done();
-	});
 
 };
