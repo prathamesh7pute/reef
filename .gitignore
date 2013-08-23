@@ -1,5 +1,6 @@
 node_modules
 components
+server/app/public
 notes.txt
 .c9revisions
 .DS_Store

@@ -1,68 +1,50 @@
-0module.exports = function (grunt) {
+module.exports = function(grunt) {
 
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
 
 		jshint: {
-			files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+			files: ['gruntfile.js', 'server/**/*.js', 'client/**/*.js'],
 			options: {
 				jshintrc: ".jshintrc"
 			}
 		},
 
-		copy: {
-			jslibs: {
+		less: {
+			development: {
 				files: {
-					'src/public/js/lib/underscore.js': 'components/underscore/underscore.js',
-					'src/public/js/lib/require.js': 'components/requirejs/require.js'
+					"server/app/public/styles/app.css": "client/app/less/app.less"
 				}
 			},
-			csslibs: {
-				files: {
-				}
-			},
-			server: {
-				files: {
-					'src/server.js': 'assets/server/server.js'
-				}
-			},
-			web: {
-				files: [{
-					expand: true,
-					cwd: 'assets/web/',
-					src: ['**'],
-					dest: 'src/public/'
-				}]
-
-			}
-		},
-
-		requirejs: {
-			compile: {
+			production: {
 				options: {
-					baseUrl: "path/to/base",
-					mainConfigFile: "path/to/config.js",
-					out: "path/to/optimized.js"
-				}
-			}
-		},
-
-		handlebars: {
-			compile: {
-				options: {
-					namespace: "JST"
+					yuicompress: true
 				},
 				files: {
-					"path/to/result.js": "path/to/source.hbs",
-					"path/to/another.js": ["path/to/sources/*.hbs", "path/to/more/*.hbs"]
+					"server/app/public/styles/app.css": "client/app/less/app.less"
 				}
 			}
+		},
+
+		copy: {
+			main: {
+				expand: true,
+				cwd: 'client/app/',
+				src: ['scripts/**', 'index.html'],
+				dest: 'server/app/public/',
+			},
 		},
 
 		watch: {
-			files: ['<%= jshint.files %>'],
-			tasks: ['jshint']
+			jshint: {
+				files: ['<%= jshint.files %>'],
+				tasks: ['jshint']
+			},
+			styles: {
+				files: ['client/app/less/**/*.less'],
+				tasks: ['less:development']
+			}
 		}
 
 	});
@@ -70,7 +52,7 @@
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-handlebars');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('build', ['copy']);
