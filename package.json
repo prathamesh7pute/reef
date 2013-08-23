@@ -1,6 +1,23 @@
 {
   "name": "reef",
+  "description": "Project skeleton creator to use with coral, express, mongoose and angular js",
   "version": "0.0.1",
+  "author": {
+    "name": "Prathamesh Satpute",
+    "email": "prathamesh.satpute@gmail.com"
+  },
+  "keywords": [
+    "coral",
+    "node",
+    "mongoose",
+    "express",
+    "rest",
+    "angular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prathamesh7pute/reef.git"
+  },
   "dependencies": {
     "underscore": "~1.5.1",
     "coral": "~0.2.2",
