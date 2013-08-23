@@ -2,12 +2,10 @@
   "name": "reef",
   "version": "0.0.1",
   "dependencies": {
-    "backbone": "~1.0.0",
-    "underscore": "~1.4.4",
-    "jquery": "~2.0.0",
-    "requirejs": "~2.1.6",
-    "bootstrap": "~2.3.1",
-    "handlebars": "~1.0.0-rc.4",
-    "almond": "~0.2.5"
+    "angular": "~1.2.0rc1",
+    "underscore": "~1.5.1",
+    "requirejs": "~2.1.8",
+    "bootstrap": "~3.0.0",
+    "almond": "~0.2.6"
   }
 }

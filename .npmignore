@@ -1,0 +1,10 @@
+node_modules
+components
+test
+.c9revisions
+.DS_Store
+.jshintrc
+.git*
+.travis.yml
+History.md
+notes.txt

@@ -2,17 +2,19 @@
   "name": "reef",
   "version": "0.0.1",
   "dependencies": {
-    "express": "~3.2.4",
-    "handlebars": "~1.0.11",
-    "underscore": "~1.4.4",
-    "requirejs": "~2.1.6"
+    "underscore": "~1.5.1",
+    "coral": "~0.2.2",
+    "express": "~3.3.5",
+    "jade": "~0.35.0",
+    "mongoose": "~3.6.18",
+    "passport": "~0.1.17",
+    "passport-oauth": "~1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.4.3",
-    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-watch": "~0.5.2",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-requirejs": "~0.4.1",
-    "grunt-contrib-handlebars": "~0.5.8"
+    "grunt-contrib-requirejs": "~0.4.1"
   }
 }
